@@ -1,0 +1,7 @@
+/* Minimal overrides if needed */
+.tone-btn {
+    transition: all 0.2s ease-in-out;
+}
+.tone-btn:active {
+    transform: scale(0.95);
+}
