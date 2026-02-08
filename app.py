@@ -5,10 +5,15 @@ from dotenv import load_dotenv
 
 # Load environment variables
 load_dotenv()
+api_key = os.getenv("GEMINI_API_KEY")
 
+if not api_key:
+    print("Warning: GEMINI_API_KEY not found in environment variables.")
+
+genai.configure(api_key=api_key)
 # Configure Gemini
 # Ensure your .env file has GEMINI_API_KEY=Your_Actual_Key
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+#genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
 # Using a slightly faster/stable model alias if available, or fallback to standard
 model = genai.GenerativeModel('gemini-3-flash-preview')
